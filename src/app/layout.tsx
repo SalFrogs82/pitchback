@@ -13,9 +13,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PitchBack — Softball Pitching Rehab & Performance",
+  title: {
+    default: "PitchBack — Softball Pitching Rehab & Performance",
+    template: "%s | PitchBack",
+  },
   description:
     "Track your softball pitching rehab progress, pitching metrics, strength training, and return-to-play journey.",
+  keywords: ["softball", "pitching", "rehab", "performance tracking", "interval throwing program", "rapsodo"],
+  openGraph: {
+    title: "PitchBack — Softball Pitching Rehab & Performance",
+    description: "Your comeback starts here. Track rehab, pitching data, strength, and goals.",
+    siteName: "PitchBack",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PitchBack",
+    description: "Softball pitching rehab & performance tracking",
+  },
 };
 
 export default function RootLayout({
