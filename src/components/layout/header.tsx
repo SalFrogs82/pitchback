@@ -14,6 +14,8 @@ const pageTitles: Record<string, string> = {
   "/pitching/release-point": "Release Point Analysis",
   "/strength": "Strength Log",
   "/strength/trends": "Strength Trends",
+  "/strength/power": "Power Tests",
+  "/strength/correlations": "Strength-Pitching Correlations",
   "/workload": "Workload",
   "/goals": "Goals",
   "/journal": "Journal",

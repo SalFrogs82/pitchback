@@ -11,6 +11,8 @@ import {
   Upload,
   Award,
   Crosshair,
+  Zap,
+  BarChart3,
   type LucideIcon,
 } from "lucide-react";
 
@@ -53,6 +55,9 @@ export const navGroups: NavGroup[] = [
     label: "Training",
     items: [
       { title: "Strength", href: "/strength", icon: Dumbbell },
+      { title: "Str. Trends", href: "/strength/trends", icon: TrendingUp },
+      { title: "Power Tests", href: "/strength/power", icon: Zap },
+      { title: "Correlations", href: "/strength/correlations", icon: BarChart3 },
       { title: "Workload", href: "/workload", icon: Activity },
     ],
   },
