@@ -197,6 +197,95 @@ export type Database = {
           updated_at?: string;
         };
       };
+      pitch_sessions: {
+        Row: {
+          id: string;
+          user_id: string;
+          date: string;
+          session_type: string | null;
+          location: string | null;
+          total_pitches: number | null;
+          csv_file_url: string | null;
+          notes: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          date: string;
+          session_type?: string | null;
+          location?: string | null;
+          total_pitches?: number | null;
+          csv_file_url?: string | null;
+          notes?: string | null;
+        };
+        Update: {
+          date?: string;
+          session_type?: string | null;
+          location?: string | null;
+          total_pitches?: number | null;
+          csv_file_url?: string | null;
+          notes?: string | null;
+        };
+      };
+      pitches: {
+        Row: {
+          id: string;
+          session_id: string;
+          user_id: string;
+          pitch_number: number | null;
+          pitch_type: "fastball" | "changeup" | "riseball" | "curveball" | "dropball" | "screwball" | null;
+          velocity: number | null;
+          spin_rate: number | null;
+          true_spin: number | null;
+          spin_efficiency: number | null;
+          spin_direction: number | null;
+          gyro_degree: number | null;
+          horizontal_break: number | null;
+          vertical_break: number | null;
+          release_height: number | null;
+          release_side: number | null;
+          extension: number | null;
+          strike_zone: string | null;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          session_id: string;
+          user_id: string;
+          pitch_number?: number | null;
+          pitch_type?: "fastball" | "changeup" | "riseball" | "curveball" | "dropball" | "screwball" | null;
+          velocity?: number | null;
+          spin_rate?: number | null;
+          true_spin?: number | null;
+          spin_efficiency?: number | null;
+          spin_direction?: number | null;
+          gyro_degree?: number | null;
+          horizontal_break?: number | null;
+          vertical_break?: number | null;
+          release_height?: number | null;
+          release_side?: number | null;
+          extension?: number | null;
+          strike_zone?: string | null;
+        };
+        Update: {
+          pitch_number?: number | null;
+          pitch_type?: "fastball" | "changeup" | "riseball" | "curveball" | "dropball" | "screwball" | null;
+          velocity?: number | null;
+          spin_rate?: number | null;
+          true_spin?: number | null;
+          spin_efficiency?: number | null;
+          spin_direction?: number | null;
+          gyro_degree?: number | null;
+          horizontal_break?: number | null;
+          vertical_break?: number | null;
+          release_height?: number | null;
+          release_side?: number | null;
+          extension?: number | null;
+          strike_zone?: string | null;
+        };
+      };
     };
   };
 };

@@ -11,6 +11,7 @@ const pageTitles: Record<string, string> = {
   "/pitching/trends": "Pitching Trends",
   "/pitching/upload": "Upload CSV",
   "/pitching/benchmarks": "D1 Benchmarks",
+  "/pitching/release-point": "Release Point Analysis",
   "/strength": "Strength Log",
   "/strength/trends": "Strength Trends",
   "/workload": "Workload",

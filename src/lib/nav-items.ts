@@ -8,6 +8,9 @@ import {
   Activity,
   BookOpen,
   Settings,
+  Upload,
+  Award,
+  Crosshair,
   type LucideIcon,
 } from "lucide-react";
 
@@ -40,7 +43,10 @@ export const navGroups: NavGroup[] = [
     label: "Pitching",
     items: [
       { title: "Sessions", href: "/pitching", icon: Activity },
+      { title: "Upload", href: "/pitching/upload", icon: Upload },
       { title: "Trends", href: "/pitching/trends", icon: TrendingUp },
+      { title: "Benchmarks", href: "/pitching/benchmarks", icon: Award },
+      { title: "Release Pt", href: "/pitching/release-point", icon: Crosshair },
     ],
   },
   {
