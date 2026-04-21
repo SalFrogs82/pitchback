@@ -16,14 +16,22 @@ export default function LoginPage() {
 
   return (
     <Card>
-      <CardHeader className="text-center">
-        <CardTitle className="text-2xl font-bold">PitchBack</CardTitle>
-        <CardDescription>Sign in to your account</CardDescription>
+      <CardHeader className="text-center space-y-3">
+        {/* Mobile-only softball icon */}
+        <div className="lg:hidden flex justify-center">
+          <svg viewBox="0 0 100 100" className="w-14 h-14" fill="none">
+            <circle cx="50" cy="50" r="46" fill="#f5a623" stroke="#e8941a" strokeWidth="2" />
+            <path d="M30 20 C35 30, 35 40, 30 50 C25 60, 25 70, 30 80" stroke="#c82014" strokeWidth="3" fill="none" strokeLinecap="round" />
+            <path d="M70 20 C65 30, 65 40, 70 50 C75 60, 75 70, 70 80" stroke="#c82014" strokeWidth="3" fill="none" strokeLinecap="round" />
+          </svg>
+        </div>
+        <CardTitle className="text-2xl font-bold text-[#1a6b3c] dark:text-[#4ade80]">Welcome back</CardTitle>
+        <CardDescription>Sign in to continue your journey</CardDescription>
       </CardHeader>
       <form action={formAction}>
         <CardContent className="space-y-4">
           {state.error && (
-            <div className="rounded-md bg-destructive/10 p-3 text-sm text-destructive">
+            <div className="rounded-lg bg-[#c82014]/10 p-3 text-sm text-[#c82014]">
               {state.error}
             </div>
           )}
@@ -41,10 +49,10 @@ export default function LoginPage() {
             {pending ? "Signing in..." : "Sign In"}
           </Button>
           <div className="flex justify-between w-full text-sm">
-            <Link href="/forgot-password" className="text-muted-foreground hover:underline">
+            <Link href="/forgot-password" className="text-muted-foreground hover:text-[#22874a] transition-colors">
               Forgot password?
             </Link>
-            <Link href="/signup" className="text-muted-foreground hover:underline">
+            <Link href="/signup" className="text-[#22874a] font-medium hover:underline">
               Create account
             </Link>
           </div>

@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@ducanh2912/next-pwa": "^10.2.9",
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/lora": "^5.2.8",
     "@hookform/resolvers": "^5.2.2",
     "@nivo/radar": "^0.99.0",
     "@radix-ui/react-slot": "^1.2.4",

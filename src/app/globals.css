@@ -2,6 +2,18 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+ * PitchBack Design System
+ * Inspired by Starbucks' warm, confident design language
+ * Adapted with softball theming: gold ball, field green, dugout navy
+ *
+ * Softball Color Mapping:
+ *   Starbucks Green → PitchBack Green (field/turf green)
+ *   Green Accent → PitchBack Accent (brighter action green)
+ *   House Green → Dugout Navy (deep dark surfaces)
+ *   Gold → Softball Gold (the ball itself — celebrations, achievements)
+ */
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -35,83 +47,122 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Softball-themed extras */
+  --color-softball-gold: var(--softball-gold);
+  --color-softball-gold-light: var(--softball-gold-light);
+  --color-field-green: var(--field-green);
+  --color-dugout: var(--dugout);
+  --color-stitching: var(--stitching);
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --radius-pill: 50px;
+  --font-sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-serif: "Lora", "Iowan Old Style", Georgia, serif;
 }
 
 :root {
-  --radius: 0.5rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.141 0.005 285.823);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.141 0.005 285.823);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.141 0.005 285.823);
-  --primary: oklch(0.205 0.006 285.885);
-  --primary-foreground: oklch(0.985 0.002 247.839);
-  --secondary: oklch(0.965 0.002 247.839);
-  --secondary-foreground: oklch(0.205 0.006 285.885);
-  --muted: oklch(0.965 0.002 247.839);
-  --muted-foreground: oklch(0.556 0.01 285.938);
-  --accent: oklch(0.965 0.002 247.839);
-  --accent-foreground: oklch(0.205 0.006 285.885);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0.002 247.839);
-  --border: oklch(0.929 0.004 264.542);
-  --input: oklch(0.929 0.004 264.542);
-  --ring: oklch(0.705 0.015 286.067);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0.002 247.839);
-  --sidebar-foreground: oklch(0.556 0.01 285.938);
-  --sidebar-primary: oklch(0.205 0.006 285.885);
-  --sidebar-primary-foreground: oklch(0.985 0.002 247.839);
-  --sidebar-accent: oklch(0.965 0.002 247.839);
-  --sidebar-accent-foreground: oklch(0.205 0.006 285.885);
-  --sidebar-border: oklch(0.929 0.004 264.542);
-  --sidebar-ring: oklch(0.705 0.015 286.067);
+  --radius: 12px;
+
+  /* === SURFACE & BACKGROUND === */
+  --background: #fbf8f3;          /* Warm cream canvas (café napkin) */
+  --foreground: rgba(0, 0, 0, 0.87); /* Warm black, never pure */
+  --card: #ffffff;
+  --card-foreground: rgba(0, 0, 0, 0.87);
+  --popover: #ffffff;
+  --popover-foreground: rgba(0, 0, 0, 0.87);
+
+  /* === PRIMARY: Field Green (mapped from Starbucks Green) === */
+  --primary: #1a6b3c;             /* PitchBack Green — headings, brand moments */
+  --primary-foreground: #ffffff;
+
+  /* === SECONDARY === */
+  --secondary: #f2f0eb;           /* Warm neutral — Starbucks ceramic */
+  --secondary-foreground: rgba(0, 0, 0, 0.87);
+
+  /* === MUTED === */
+  --muted: #f2f0eb;
+  --muted-foreground: rgba(0, 0, 0, 0.58); /* Soft text — metadata, captions */
+
+  /* === ACCENT: Bright action green === */
+  --accent: #22874a;              /* PitchBack Accent — CTAs, interactive elements */
+  --accent-foreground: #ffffff;
+
+  /* === DESTRUCTIVE: Stitching Red === */
+  --destructive: #c82014;
+  --destructive-foreground: #ffffff;
+
+  /* === BORDER & INPUT === */
+  --border: #e8e5e0;
+  --input: #e8e5e0;
+  --ring: #22874a;
+
+  /* === CHART COLORS (softball-themed) === */
+  --chart-1: #c82014;             /* Stitching red — fastball */
+  --chart-2: #22874a;             /* Field green — changeup */
+  --chart-3: #2563eb;             /* Sky blue — riseball */
+  --chart-4: #8b5cf6;             /* Purple — curveball */
+  --chart-5: #f59e0b;             /* Softball gold — dropball */
+
+  /* === SIDEBAR: Dugout dark === */
+  --sidebar: #1c2333;
+  --sidebar-foreground: rgba(255, 255, 255, 0.70);
+  --sidebar-primary: #f5a623;
+  --sidebar-primary-foreground: #1c2333;
+  --sidebar-accent: #283044;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #343d52;
+  --sidebar-ring: #22874a;
+
+  /* === SOFTBALL-SPECIFIC TOKENS === */
+  --softball-gold: #f5a623;       /* The ball — celebrations, achievements, milestones */
+  --softball-gold-light: #fef3d6; /* Gold tint for backgrounds */
+  --field-green: #22874a;         /* Success, positive indicators */
+  --dugout: #1c2333;              /* Deep navy — dark bands, footer */
+  --stitching: #c82014;           /* Alert accent — red stitching */
 }
 
 .dark {
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.985 0.002 247.839);
-  --card: oklch(0.141 0.005 285.823);
-  --card-foreground: oklch(0.985 0.002 247.839);
-  --popover: oklch(0.141 0.005 285.823);
-  --popover-foreground: oklch(0.985 0.002 247.839);
-  --primary: oklch(0.985 0.002 247.839);
-  --primary-foreground: oklch(0.205 0.006 285.885);
-  --secondary: oklch(0.264 0.006 285.885);
-  --secondary-foreground: oklch(0.985 0.002 247.839);
-  --muted: oklch(0.264 0.006 285.885);
-  --muted-foreground: oklch(0.651 0.012 286.067);
-  --accent: oklch(0.264 0.006 285.885);
-  --accent-foreground: oklch(0.985 0.002 247.839);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0.002 247.839);
-  --border: oklch(0.264 0.006 285.885);
-  --input: oklch(0.264 0.006 285.885);
-  --ring: oklch(0.556 0.01 285.938);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.18 0.005 285.823);
-  --sidebar-foreground: oklch(0.651 0.012 286.067);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0.002 247.839);
-  --sidebar-accent: oklch(0.264 0.006 285.885);
-  --sidebar-accent-foreground: oklch(0.651 0.012 286.067);
-  --sidebar-border: oklch(0.264 0.006 285.885);
-  --sidebar-ring: oklch(0.556 0.01 285.938);
+  --background: #141920;
+  --foreground: rgba(255, 255, 255, 0.92);
+  --card: #1c2333;
+  --card-foreground: rgba(255, 255, 255, 0.92);
+  --popover: #1c2333;
+  --popover-foreground: rgba(255, 255, 255, 0.92);
+  --primary: #4ade80;
+  --primary-foreground: #141920;
+  --secondary: #283044;
+  --secondary-foreground: rgba(255, 255, 255, 0.92);
+  --muted: #283044;
+  --muted-foreground: rgba(255, 255, 255, 0.50);
+  --accent: #4ade80;
+  --accent-foreground: #141920;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #343d52;
+  --input: #343d52;
+  --ring: #4ade80;
+  --chart-1: #ef4444;
+  --chart-2: #4ade80;
+  --chart-3: #60a5fa;
+  --chart-4: #a78bfa;
+  --chart-5: #fbbf24;
+  --sidebar: #0f1219;
+  --sidebar-foreground: rgba(255, 255, 255, 0.60);
+  --sidebar-primary: #fbbf24;
+  --sidebar-primary-foreground: #0f1219;
+  --sidebar-accent: #1c2333;
+  --sidebar-accent-foreground: rgba(255, 255, 255, 0.85);
+  --sidebar-border: #283044;
+  --sidebar-ring: #4ade80;
+  --softball-gold: #fbbf24;
+  --softball-gold-light: rgba(251, 191, 36, 0.15);
+  --field-green: #4ade80;
+  --dugout: #0f1219;
+  --stitching: #ef4444;
 }
 
 @layer base {
@@ -120,6 +171,58 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.016em;
+  }
+}
+
+/* === SOFTBALL STITCHING PATTERN === */
+.softball-stitch {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='12' viewBox='0 0 40 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6 C5 2, 10 2, 15 6 S25 10, 30 6 S40 2, 40 6' fill='none' stroke='%23c82014' stroke-width='1.5' opacity='0.15'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 40px 12px;
+}
+
+/* === PILL BUTTON ACTIVE STATE (Starbucks signature) === */
+.btn-active-press:active {
+  transform: scale(0.95);
+}
+
+/* === CARD SHADOW (Starbucks whisper-soft layered) === */
+.card-shadow {
+  box-shadow: 0 0 0.5px rgba(0,0,0,0.14), 0 1px 1px rgba(0,0,0,0.24);
+}
+
+.card-shadow-hover {
+  box-shadow: 0 0 0.5px rgba(0,0,0,0.14), 0 2px 4px rgba(0,0,0,0.18);
+}
+
+/* === FLOATING ACTION BUTTON SHADOW (Starbucks Frap-style) === */
+.fab-shadow {
+  box-shadow: 0 0 6px rgba(0,0,0,0.24), 0 8px 12px rgba(0,0,0,0.14);
+}
+
+/* === GOLD GLOW (for celebrations) === */
+.gold-glow {
+  box-shadow: 0 0 20px rgba(245, 166, 35, 0.3), 0 0 60px rgba(245, 166, 35, 0.1);
+}
+
+/* === SCROLLBAR STYLING === */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
 }
