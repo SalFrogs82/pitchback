@@ -74,7 +74,7 @@ export async function forgotPassword(formData: FormData): Promise<AuthResult> {
 
   const supabase = await createClient();
   const { error } = await supabase.auth.resetPasswordForEmail(parsed.data.email, {
-    redirectTo: `${process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"}/auth/callback?next=/reset-password`,
+    redirectTo: `${process.env.NEXT_PUBLIC_SITE_URL || "https://pitchback.vercel.app"}/auth/callback?next=/reset-password`,
   });
 
   if (error) {
